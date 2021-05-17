@@ -7,34 +7,17 @@
             {
                 "user": "admin",
                 "answer": "f(qi, D) is qi's term frequency in the document D, |D| is the length of the document D in words, and avgdl is the average document length in the text collection from which documents are drawn. k1 and b are free parameters",
-                "endorse": 14
+                "endorse": 1
             },
             {
                 "user": "admin",
                 "answer": "Check this page: https://en.wikipedia.org/wiki/Okapi_BM25",
-                "endorse": 13
-            },
-            {
-                "user": "qiqi",
-                "answer": "thanks",
-                "endorse": 3
-            }
-        ]
-    },
-    {
-        "id": 1,
-        "title": "a",
-        "description": "a",
-        "answers": [
-            {
-                "user": "admin",
-                "answer": "?",
                 "endorse": 0
             }
         ]
     },
     {
-        "id": 2,
+        "id": 1,
         "title": "What are the variations of BM25?",
         "description": "As title",
         "answers": [
@@ -46,7 +29,7 @@
         ]
     },
     {
-        "id": 3,
+        "id": 2,
         "title": "What is BM25?",
         "description": "As title",
         "answers": [
@@ -59,11 +42,6 @@
                 "user": "admin",
                 "answer": "BM25 (BM stands for Best Matching) is a ranking function used by search engines to rank matching documents according to their relevance",
                 "endorse": 0
-            },
-            {
-                "user": "admin",
-                "answer": "idk",
-                "endorse": 0
             }
         ]
     },
@@ -75,19 +53,13 @@
             {
                 "user": "admin",
                 "answer": "BM25 improves upon TF-IDF",
-                "endorse": 4
+                "endorse": 0
             },
             {
                 "user": "admin",
                 "answer": "Both of them are document ranking functions",
-                "endorse": 3
+                "endorse": 0
             }
         ]
-    },
-    {
-        "id": 5,
-        "title": "t",
-        "description": "t",
-        "answers": []
     }
 ]

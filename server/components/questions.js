@@ -14,7 +14,7 @@ const addQuestion = async (title, description) => {
     const qa = await readQuestionsFile();
     qa.push({"id": qa.length, "title": title, "description": description, "answers":[]})
     const s = JSON.stringify(qa, null, 4)
-    awaitfs.writeFile('components/data.json', s, err => {
+    fs.writeFile('components/data.json', s, err => {
         if (err) {
             console.log('Error writing file', err)
         } else {

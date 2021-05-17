@@ -67,6 +67,7 @@ const Question = ( {location} ) => {
                 console.log("getQuestion:", message["question"]);
                 // setQuestion(message["question"]);
                 setAnswers(message["question"]["answers"]);
+                setEndorseAnswerId(-1);
             });
         });
         

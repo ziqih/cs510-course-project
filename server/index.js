@@ -235,7 +235,7 @@ io.on('connection', (socket) => {
 
     socket.on('createQuestion', async (message, callback) => {
         console.log('create question!');
-        addQuestion(message.title, message.description);
+        await addQuestion(message.title, message.description);
         callback({message: "createQuestion Sucesss", "title": message.title});
 
     });
@@ -260,6 +260,14 @@ io.on('connection', (socket) => {
             io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
             io.to(user.room).emit('message', { user: 'admin', text: `${user.name} has left`});
         }
+    });
+
+    socket.on('connect_error', function(err) {
+        console.log("client connect_error: ", err);
+    });
+    
+    socket.on('connect_timeout', function(err) {
+        console.log("client connect_timeout: ", err);
     });
 });
 
