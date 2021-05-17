@@ -1,4 +1,4 @@
-const { query } = require('./sqlquery');
+// const { query } = require('./sqlquery');
 const { execFile } = require('child_process');
 const fs = require('fs');
 const util = require('util');

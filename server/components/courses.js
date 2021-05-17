@@ -1,4 +1,4 @@
-const { query } = require('./sqlquery');
+// const { query } = require('./sqlquery');
 
 const getCourses = async (university) => {
     var courses = [];

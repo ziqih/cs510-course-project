@@ -113,7 +113,7 @@ const Home = ({ location }) => {
                 </Link>
             </div>
 
-            <div className="homeInnerContainer">
+            {/* <div className="homeInnerContainer">
                 <h2 className="heading">Create</h2>
                 <SearchBox placeholder="Search for University..." data={universities} setRecordKey={setCreateUniversity}/>
                 <input placeholder=" Create Course here..." className="homeInput" type="text" onChange={(event) => setCreateCourse(event.target.value)} />
@@ -127,7 +127,7 @@ const Home = ({ location }) => {
                 <Courses courses={courses} deleteCourses={deleteCourses} setDeleteCourses={setDeleteCourses} university={createUniversity} /> 
                 </div>
                 : null }
-            </div>
+            </div> */}
         </div>
         
         

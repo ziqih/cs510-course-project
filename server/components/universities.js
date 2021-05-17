@@ -1,4 +1,4 @@
-const { query } = require('./sqlquery');
+// const { query } = require('./sqlquery');
 
 const getUniversities = async () => {
     var res = [];

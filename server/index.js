@@ -5,10 +5,10 @@ const { addUser, removeUser, getUser, getUsersInRoom, getUserFromDB, likeCourse,
 const { getCourses, addCourse, deleteCourse, getCourse, updateCourse } = require('./components/courses.js');
 const { getUniversities } = require('./components/universities.js');
 const { getQuestions, addQuestion, searchQuestion, getQuestion, addAnswer, endorseAnswer } = require('./components/questions.js');
-const { init, query } = require('./components/sqlquery.js');
+// const { init, query } = require('./components/sqlquery.js');
 const { execFile } = require('child_process');
 
-const { MongoClient } = require('mongodb');
+// const { MongoClient } = require('mongodb');
 
 const PORT = process.env.PORT || 5000
 const router = require('./components/router');
@@ -16,20 +16,20 @@ const e = require('express');
 const { constants } = require('buffer');
 const app = express();
 
-client = new MongoClient('mongodb://localhost:27017/listenonline');
-client.connect(async () => {
-    const db = client.db('listenonline');
+// client = new MongoClient('mongodb://localhost:27017/listenonline');
+// client.connect(async () => {
+//     const db = client.db('listenonline');
 
-    try {
-        const counter = await db.collection('counters').findOne({ _id: 'server_id' });
-        console.log(counter, 3113)
-        if (!counter) {
-        db.collection('counters').insertOne({ _id: 'server_id', sequence_value: 0 });
-        }
-    } catch (error) {
-        console.log(error);
-    }
-});
+//     try {
+//         const counter = await db.collection('counters').findOne({ _id: 'server_id' });
+//         console.log(counter, 3113)
+//         if (!counter) {
+//         db.collection('counters').insertOne({ _id: 'server_id', sequence_value: 0 });
+//         }
+//     } catch (error) {
+//         console.log(error);
+//     }
+// });
 
 const server = http.createServer(app);
 const io = socketio(server);
@@ -61,24 +61,24 @@ io.on('connection', (socket) => {
 
     // Handle Home get courses
     socket.on('getCourses', async ({ university }, callback) => {
-        console.log("Received getCourses", university);
-        const courses = await getCourses(university);
-        client = new MongoClient('mongodb://localhost:27017/listenonline');
-        client.connect(async () => {
-        const db = client.db('listenonline');
+        // console.log("Received getCourses", university);
+        // const courses = await getCourses(university);
+        // client = new MongoClient('mongodb://localhost:27017/510');
+        // client.connect(async () => {
+        // const db = client.db('cs510');
 
-        try {
-            const counter = await db.collection('counters').findOne({ _id: 'server_id' });
-            console.log(counter, 183113)
-            if (!counter) {
-            db.collection('counters').insertOne({ _id: 'server_id', sequence_value: 0 });
-            }
-        } catch (error) {
-            console.log(error);
-        }
-        });
-        console.log(3113)
-        callback({message: "getCourses Sucesss", "courses": courses});
+        // try {
+        //     const counter = await db.collection('counters').findOne({ _id: 'server_id' });
+        //     console.log(counter, 183113)
+        //     if (!counter) {
+        //     db.collection('counters').insertOne({ _id: 'server_id', sequence_value: 0 });
+        //     }
+        // } catch (error) {
+        //     console.log(error);
+        // }
+        // });
+        // console.log(3113)
+        callback({message: "getCourses Sucesss", "courses": ['CS 510']});
     });
 
     // Handle Home add courses
@@ -97,8 +97,8 @@ io.on('connection', (socket) => {
 
     // Handle Home get universities
     socket.on('getUniversities', async (req, callback) => {
-        var universities = await getUniversities();
-        callback({message: "getUniversities Sucesss", "universities": universities});
+        // var universities = await getUniversities();
+        callback({message: "getUniversities Sucesss", "universities": [{ key: 'uiuc', value: 'University of Illinois at Urbana Champaign' }]});
     });
 
     // Handle Edit get course
@@ -270,6 +270,10 @@ io.on('connection', (socket) => {
         console.log("client connect_timeout: ", err);
     });
 });
+
+const init = async () => {
+    console.log('init')
+}
 
 init().then(() => {
     app.use(router);
