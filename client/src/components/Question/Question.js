@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 import SearchBox from '../Home/SearchBox/SearchBox';
 import { Link } from 'react-router-dom';
 import ScrollToBottom from 'react-scroll-to-bottom';
-
+import endorseIcon from '../../icons/like.png'
 
 import './Question.css';
 
@@ -18,6 +18,7 @@ const Question = ( {location} ) => {
     const [answer, setAnswer] = useState('');
     const [user, setUser] = useState('');
     const [submitAnswer, setSubmitAnswer] = useState([]);
+    const [endorseAnswerId, setEndorseAnswerId] = useState(-1);
 
    
     useEffect(() => {
@@ -55,6 +56,21 @@ const Question = ( {location} ) => {
         });
         
     }, [submitAnswer]);
+
+    useEffect(() => {
+        if (endorseAnswerId == -1) {
+            return;
+        }
+        socket.emit("endorseAnswer", { questionId: id, answerId: endorseAnswerId }, (message)=> {
+            console.log("endorse answer", message);
+            socket.emit('getQuestion', { id: id, message: "Get Question" }, (message) => {
+                console.log("getQuestion:", message["question"]);
+                // setQuestion(message["question"]);
+                setAnswers(message["question"]["answers"]);
+            });
+        });
+        
+    }, [endorseAnswerId]);
     
 
     return (
@@ -74,6 +90,7 @@ const Question = ( {location} ) => {
                             <div className="courseBox">
                                 <p className="sentText pl-10"><b>{key["user"]}</b></p>
                                 <p className="courseText">{key["answer"]}</p>
+                                <button className="endorseButton" onClick={(event) => setEndorseAnswerId(i)}><img src={endorseIcon} alt="endorse answer"/><b>{key["endorse"]}</b></button>
                             </div>
                         </div>
                         );

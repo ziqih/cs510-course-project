@@ -247,8 +247,8 @@ io.on('connection', (socket) => {
     });
 
     socket.on('endorseAnswer', async (message, callback) => {
-        await endorseAnswer(message.questionId, message.answerId);
-        callback({message: "endorseAnswer Sucesss"});
+        const endorse = await endorseAnswer(message.questionId, message.answerId);
+        callback({message: "endorseAnswer Sucesss", endorse: endorse});
 
     });
     

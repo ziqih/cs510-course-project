@@ -14,7 +14,7 @@ const addQuestion = async (title, description) => {
     const qa = await readQuestionsFile();
     qa.push({"id": qa.length, "title": title, "description": description, "answers":[]})
     const s = JSON.stringify(qa, null, 4)
-    fs.writeFile('components/data.json', s, err => {
+    awaitfs.writeFile('components/data.json', s, err => {
         if (err) {
             console.log('Error writing file', err)
         } else {
@@ -56,15 +56,31 @@ const addAnswer = async (qid, answer, user="anonymous") => {
     })
 }
 
+const sortedAnswerByEndorse = (answers) => {
+    answers.sort(function(a, b) {
+        var keyA = a["endorse"],
+          keyB = b["endorse"];
+        // Compare the 2 answers
+        if (keyA < keyB) return 1;
+        if (keyA > keyB) return -1;
+        return 0;
+      });
+    return answers;
+      
+}
+
 const endorseAnswer = async (questionId, answerId) => {
     const qa = await readQuestionsFile();
     if (questionId >= 0 && questionId < qa.length) {
         var answers = qa[questionId]["answers"];
         if (answerId >= 0 && answerId < answers.length) {
             qa[questionId]["answers"][answerId]["endorse"] += 1;
+            qa[questionId]["answers"] = sortedAnswerByEndorse(qa[questionId]["answers"]);
             await writeQuestionsFile(qa);
+            return qa[questionId]["answers"][answerId]["endorse"];
         }
     }
+    return 0;
 }
 
 // addQuestion("what is nature?",  "..." );

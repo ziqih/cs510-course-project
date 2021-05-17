@@ -12,9 +12,11 @@ This is course project for cs510.
 ## Usage
 
 ```shell
+# start mongodb
+brew services start mongodb-community
 # start mysql 
 brew services start mysql
-# check if mysql is started
+# check if mongodb and mysql are started
 brew services list
 # try connecting by root username
 # PS: remember to config mysql username and password in server/sqlquery.js

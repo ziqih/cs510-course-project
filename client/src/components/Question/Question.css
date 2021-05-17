@@ -34,3 +34,15 @@ max-width: 80%;
     overflow: auto;
     flex: auto;
 }
+
+.endorseButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #cdd7f3;
+  padding: 0px;
+  border-radius: 0px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+}
