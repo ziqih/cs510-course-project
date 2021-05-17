@@ -1,0 +1,28 @@
+.homeOuterContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #ffffff;
+    flex-direction: column;
+  }
+  
+.homeInnerContainer {
+    width: 40%;
+    margin: 10px 0;
+}
+
+.homeInput {
+  border: none;
+  border-radius: 0;
+  padding: 5%;
+  width: 100%;
+  font-size: 1.0em;
+}
+
+.abs {
+  position: absolute;
+}
+.rel {
+  position: relative;
+}

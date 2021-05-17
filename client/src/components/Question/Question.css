@@ -1,0 +1,36 @@
+.questionText {
+    display: flex;
+    align-items: center;
+    font-family: Helvetica;
+    color: #2979FF;
+    letter-spacing: 0.3px;
+  }
+
+
+.questionContainer {
+    display: flex;
+    padding: 0 5%;
+    margin-top: 3px;
+  }
+
+.questionBox {
+background: #ffffff;
+border-radius: 20px;
+padding: 5px 20px;
+color: white;
+display: inline-block;
+max-width: 80%;
+}
+
+.answersHeading {
+    color: #2979FF;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    /* border-bottom: 2px solid #2979FF; */
+  }
+
+.answers {
+    padding: 5% 0;
+    overflow: auto;
+    flex: auto;
+}

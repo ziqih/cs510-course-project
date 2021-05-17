@@ -1,0 +1,33 @@
+.editInput {
+    border: none;
+    border-radius: 0;
+    padding: 5%;
+    width: 100%;
+    font-size: 1.0em;
+  }
+
+.editInnerContainer {
+    width: 40%;
+    margin: 10px 0;
+}
+
+.entryButton {
+    color: #2979FF !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    width: 100%;
+}
+
+.editOuterContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #ffffff;
+    flex-direction: column;
+  }
