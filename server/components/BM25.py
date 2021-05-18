@@ -79,8 +79,8 @@ class BM25:
             scores.append(self.get_score(self.documents[i], query, idf_dict))
         return scores
 
-    def __str__(self):
-        return f"BM25(k1={self.k1})"
+    # def __str__(self):
+    #     return f"BM25(k1={self.k1})"
 
 
 if __name__ == "__main__":
@@ -91,7 +91,7 @@ if __name__ == "__main__":
         l1.append(i['title'])
         t = ''
         for j in i['answers']:
-            t += j
+            t += j['answer']
         l2.append(t)
 
     q = ' '.join(sys.argv[1:])

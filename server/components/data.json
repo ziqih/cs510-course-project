@@ -6,12 +6,12 @@
         "answers": [
             {
                 "user": "admin",
-                "answer": "f(qi, D) is qi's term frequency in the document D, |D| is the length of the document D in words, and avgdl is the average document length in the text collection from which documents are drawn. k1 and b are free parameters",
-                "endorse": 1
+                "answer": "Check this page: https://en.wikipedia.org/wiki/Okapi_BM25",
+                "endorse": 0
             },
             {
                 "user": "admin",
-                "answer": "Check this page: https://en.wikipedia.org/wiki/Okapi_BM25",
+                "answer": "f(qi, D) is qi's term frequency in the document D, |D| is the length of the document D in words, and avgdl is the average document length in the text collection from which documents are drawn. k1 and b are free parameters",
                 "endorse": 0
             }
         ]
