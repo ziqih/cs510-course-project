@@ -2,25 +2,15 @@
 
 ## Description
 
-This is course project for cs510. 
+This is a question-asking platform that allows students to ask and answer questions.
 
 ## Environment
 
-- mysql Ver 8.0.22
 - npm 6.14.8
 
 ## Usage
 
 ```shell
-# start mongodb
-brew services start mongodb-community
-# start mysql 
-brew services start mysql
-# check if mongodb and mysql are started
-brew services list
-# try connecting by root username
-# PS: remember to config mysql username and password in server/sqlquery.js
-mysql -u root -p
 # in terminal 1, run server
 cd server/
 npm i 
@@ -33,6 +23,4 @@ npm start
 nvm install v14.3.0
 ```
 
-PS: if "npm i" failed, try remove node_modules to start a fresh install. Above commands work on MacOS.
-nice tutorial for MongoDB: https://zellwk.com/blog/install-mongodb/
-
+PS: if "npm i" failed, try remove node_modules to start a fresh install.

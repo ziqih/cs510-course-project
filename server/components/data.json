@@ -1,65 +1,88 @@
 [
     {
-        "description": "As title", 
-        "id": 0, 
+        "title": "What is the relationship between BM25 and TF-IDF?",
+        "description": "As title",
         "answers": [
             {
-                "answer": "BM25 improves upon TF-IDF", 
-                "user": "admin", 
-                "endorse": 0
-            }, 
+                "answer": "BM25 improves upon TF-IDF",
+                "user": "admin",
+                "endorse": 8
+            },
             {
-                "answer": "Both of them are document ranking functions", 
-                "user": "admin", 
-                "endorse": 0
+                "answer": "Both of them are document ranking functions",
+                "user": "admin",
+                "endorse": 7
+            },
+            {
+                "user": "ziqi",
+                "answer": "thanks",
+                "endorse": 1
             }
-        ], 
-        "title": "What is the relationship between BM25 and TF-IDF?"
-    }, 
+        ],
+        "id": 0
+    },
     {
-        "description": "As title", 
-        "id": 1, 
+        "description": "..",
+        "id": 1,
         "answers": [
             {
-                "answer": "BM25 is a bag-of-words retrieval function that ranks a set of documents based on the query terms appearing in each document, regardless of their proximity within the document.", 
-                "user": "admin", 
-                "endorse": 0
-            }, 
-            {
-                "answer": "BM25 (BM stands for Best Matching) is a ranking function used by search engines to rank matching documents according to their relevance", 
-                "user": "admin", 
-                "endorse": 0
+                "answer": "answer1",
+                "user": "ziqi",
+                "endorse": 1
             }
-        ], 
-        "title": "What is BM25?"
-    }, 
+        ],
+        "title": "new"
+    },
     {
-        "description": "As title", 
-        "id": 2, 
+        "title": "What do the parameters of BM25 stand for?",
+        "description": "As title",
         "answers": [
             {
-                "answer": "BM11 (for b=1) and BM15 (for b=0)", 
-                "user": "admin", 
+                "answer": "Check this page: https://en.wikipedia.org/wiki/Okapi_BM25",
+                "user": "admin",
+                "endorse": 0
+            },
+            {
+                "answer": "f(qi, D) is qi's term frequency in the document D, |D| is the length of the document D in words, and avgdl is the average document length in the text collection from which documents are drawn. k1 and b are free parameters",
+                "user": "admin",
                 "endorse": 0
             }
-        ], 
-        "title": "What are the variations of BM25?"
-    }, 
+        ],
+        "id": 2
+    },
     {
-        "description": "As title", 
-        "id": 3, 
+        "title": "What are the variations of BM25?",
+        "description": "As title",
         "answers": [
             {
-                "answer": "Check this page: https://en.wikipedia.org/wiki/Okapi_BM25", 
-                "user": "admin", 
-                "endorse": 0
-            }, 
-            {
-                "answer": "f(qi, D) is qi's term frequency in the document D, |D| is the length of the document D in words, and avgdl is the average document length in the text collection from which documents are drawn. k1 and b are free parameters", 
-                "user": "admin", 
+                "answer": "BM11 (for b=1) and BM15 (for b=0)",
+                "user": "admin",
                 "endorse": 0
             }
-        ], 
-        "title": "What do the parameters of BM25 stand for?"
+        ],
+        "id": 3
+    },
+    {
+        "title": "What is BM25?",
+        "description": "As title",
+        "answers": [
+            {
+                "answer": "BM25 is a bag-of-words retrieval function that ranks a set of documents based on the query terms appearing in each document, regardless of their proximity within the document.",
+                "user": "admin",
+                "endorse": 0
+            },
+            {
+                "answer": "BM25 (BM stands for Best Matching) is a ranking function used by search engines to rank matching documents according to their relevance",
+                "user": "admin",
+                "endorse": 0
+            }
+        ],
+        "id": 4
+    },
+    {
+        "id": 5,
+        "title": "when is the lecture?",
+        "description": "...",
+        "answers": []
     }
 ]
